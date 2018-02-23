@@ -32,7 +32,11 @@
       <li>Currently building more web things with Accenture</li>
     </ul>
   </noscript>
-  <div id="root"></div>
+  <div id="root">
+    <div class="loading">
+      Loading...
+    </div>
+  </div>
   <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -48,6 +52,14 @@
       box-sizing: border-box;
       padding: 0;
       margin: 0;
+    }
+
+    .loading {
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
     }
   </style>
 </body>
