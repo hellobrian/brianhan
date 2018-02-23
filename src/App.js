@@ -1,21 +1,35 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
+import { Route, Switch } from "react-router-dom";
+import Loadable from "react-loadable";
 import "./App.css";
-import HomePage from "./pages/HomePage";
+
+const Loading = ({ error, pastDelay }) => {
+  if (error) {
+    return <div>Error!</div>;
+  } else if (pastDelay) {
+    return <div>Loading...</div>;
+  } else {
+    return null;
+  }
+};
+
+const Home = Loadable({
+  loader: () => import("./pages/HomePage"),
+  loading: Loading
+});
+
+const Uses = Loadable({
+  loader: () => import("./pages/UsesPage"),
+  loading: Loading
+});
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <HomePage />
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/uses" component={Uses} />
+      </Switch>
     );
   }
 }
