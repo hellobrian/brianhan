@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { Route, Switch } from "react-router-dom";
-import Loadable from "react-loadable";
-import "./App.css";
+import React, { Component, Fragment } from 'react';
+import { Route, Switch } from 'react-router-dom';
+import Loadable from 'react-loadable';
+import NavContainer from 'containers/NavContainer';
 
 const Loading = ({ error, pastDelay }) => {
   if (error) {
@@ -14,22 +14,25 @@ const Loading = ({ error, pastDelay }) => {
 };
 
 const Home = Loadable({
-  loader: () => import("./pages/HomePage"),
+  loader: () => import('pages/HomePage'),
   loading: Loading
 });
 
 const Uses = Loadable({
-  loader: () => import("./pages/UsesPage"),
+  loader: () => import('pages/UsesPage'),
   loading: Loading
 });
 
 class App extends Component {
   render() {
     return (
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/uses" component={Uses} />
-      </Switch>
+      <Fragment>
+        <NavContainer />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/uses" component={Uses} />
+        </Switch>
+      </Fragment>
     );
   }
 }
