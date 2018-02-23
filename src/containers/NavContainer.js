@@ -1,3 +1,4 @@
+import { withRouter } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { toggleNav } from 'state/nav/actions';
@@ -11,4 +12,4 @@ const mapDispatchToProps = dispatch => {
   return bindActionCreators({ toggleNav }, dispatch);
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Nav);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Nav));

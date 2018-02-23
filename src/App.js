@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Loadable from 'react-loadable';
+import NavContainer from 'containers/NavContainer';
 
 const Loading = ({ error, pastDelay }) => {
   if (error) {
@@ -25,10 +26,13 @@ const Uses = Loadable({
 class App extends Component {
   render() {
     return (
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/uses" component={Uses} />
-      </Switch>
+      <Fragment>
+        <NavContainer />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/uses" component={Uses} />
+        </Switch>
+      </Fragment>
     );
   }
 }
