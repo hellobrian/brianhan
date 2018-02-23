@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import Loadable from "react-loadable";
-import "./App.css";
 
 const Loading = ({ error, pastDelay }) => {
   if (error) {
