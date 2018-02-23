@@ -1,7 +1,7 @@
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
-import { toggleNav } from "../redux/nav/actions";
-import Nav from "../components/Nav";
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { toggleNav } from 'state/nav/actions';
+import Nav from 'components/Nav';
 
 const mapStateToProps = state => ({
   isNavOpen: state.isNavOpen

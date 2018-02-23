@@ -1,5 +1,5 @@
-import { createStore, applyMiddleware, compose } from "redux";
-import { reducer } from "./nav/reducers";
+import { createStore } from 'redux';
+import { reducer } from 'state/nav/reducers';
 
 const reduxDevTools =
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();

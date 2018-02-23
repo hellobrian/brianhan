@@ -1,6 +1,12 @@
-import React, { Component, Fragment } from "react";
+import React, { Component, Fragment } from 'react';
+import PropTypes from 'prop-types';
 
 export default class Nav extends Component {
+  static propTypes = {
+    toggleNav: PropTypes.func.isRequired,
+    isNavOpen: PropTypes.bool.isRequired
+  };
+
   render() {
     const { toggleNav, isNavOpen } = this.props;
     return (

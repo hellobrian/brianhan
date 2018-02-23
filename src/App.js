@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { Route, Switch } from "react-router-dom";
-import Loadable from "react-loadable";
+import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom';
+import Loadable from 'react-loadable';
 
 const Loading = ({ error, pastDelay }) => {
   if (error) {
@@ -13,12 +13,12 @@ const Loading = ({ error, pastDelay }) => {
 };
 
 const Home = Loadable({
-  loader: () => import("./pages/HomePage"),
+  loader: () => import('pages/HomePage'),
   loading: Loading
 });
 
 const Uses = Loadable({
-  loader: () => import("./pages/UsesPage"),
+  loader: () => import('pages/UsesPage'),
   loading: Loading
 });
 

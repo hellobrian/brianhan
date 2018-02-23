@@ -1,4 +1,4 @@
-import { TOGGLE_NAV } from "./actions";
+import { TOGGLE_NAV } from 'state/nav/actions';
 
 const initialState = {
   isNavOpen: false
